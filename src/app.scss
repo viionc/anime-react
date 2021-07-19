@@ -1,0 +1,167 @@
+$mainPurpleColor: #8a0983;
+
+.App {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 40px;
+    background-color: hsl(272, 85%, 8%);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 10% auto;
+    font-family: sans-serif;
+
+    > .nav {
+        grid-column: 1/ 1;
+        grid-row: 1/1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 2em;
+        color: #eeeeee;
+        letter-spacing: 2px;
+
+        > .secondary {
+            color: $mainPurpleColor;
+            padding: 0 2px;
+        }
+    }
+
+    > .left-panel {
+        grid-column: 1/1;
+        grid-row: 2/2;
+        border-right: 1px solid #2e2e2e;
+
+        > .search-panel {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.25em;
+            margin-top: 40px;
+
+            > .label {
+                color: #eeeeee;
+                font-size: 1.5em;
+                font-weight: 700;
+            }
+            > .change-button {
+                padding: 0.3em 0.5em;
+                color: white;
+                background-color: $mainPurpleColor;
+                border: 1px solid darken($mainPurpleColor, 10%);
+                font-size: 1.5em;
+                border-radius: 4px;
+                cursor: pointer;
+                opacity: 0.8;
+
+                &:hover {
+                    opacity: 1;
+                }
+                &.active {
+                    background-color: #6b11a7;
+                    border: 1px solid #7012af;
+                    opacity: 1;
+                }
+            }
+        }
+        > .search-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 0.5em;
+
+            > .input-wrapper {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                margin-top: 20px;
+                gap: 0.5em;
+
+                > .label {
+                    color: #eeeeee;
+                    font-size: 1.5em;
+                    font-weight: 700;
+                }
+
+                > input {
+                    height: 32px;
+                    border: none;
+                    border-radius: 4px;
+                }
+
+                > .select {
+                    width: 200px;
+                }
+            }
+        }
+        > .search-button {
+            margin-top: 20px;
+            padding: 0.3em 0.5em;
+            color: white;
+            background-color: $mainPurpleColor;
+            border: 1px solid darken($mainPurpleColor, 10%);
+            font-size: 1.5em;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.card-container {
+    grid-row: 2/2;
+    grid-column: 2/2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    overflow-y: auto;
+    height: 100%;
+    align-content: flex-start;
+
+    > .card {
+        height: 300px;
+        width: 200px;
+        border-radius: 4px;
+
+        > .title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 4px;
+            > span {
+                &:first-child {
+                    color: #eeeeee;
+                    font-size: 1em;
+                    font-weight: 700;
+                    max-width: 90%;
+                    text-overflow: ellipsis;
+                }
+                &:nth-child(2) {
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 50%;
+
+                    &.airing {
+                        background: #098b1b;
+                        color: #098b1b;
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                    }
+                    &.ended {
+                        background: #8b2e09;
+                        color: #8b2e09;
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}
