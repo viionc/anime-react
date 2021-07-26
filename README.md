@@ -1,4 +1,4 @@
-A simple website for searching anime.
+A simple website for searching anime. Can be visited thanks to GitHub Pages: https://viionc.github.io/anime-react/
 
 Technologies used:
 - React
