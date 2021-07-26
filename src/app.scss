@@ -1,27 +1,28 @@
-$mainPurpleColor: #8a0983;
+$mainPurpleColor: #92098b;
+$backgroundColor: #2e2e2e;
 
 .App {
     box-sizing: border-box;
     margin: 0;
-    padding: 0 40px;
-    background-color: hsl(272, 85%, 8%);
+    background-color: $backgroundColor;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 10% auto;
+    grid-template-rows: 10% 85%;
     font-family: sans-serif;
 
     > .nav {
-        grid-column: 1/ 1;
+        grid-column: 1 / span 2;
         grid-row: 1/1;
-        width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-left: 2em;
         font-weight: 800;
         font-size: 2em;
         color: #eeeeee;
         letter-spacing: 2px;
+        background-color: darken($backgroundColor, 5%);
 
         > .secondary {
             color: $mainPurpleColor;
@@ -33,6 +34,7 @@ $mainPurpleColor: #8a0983;
         grid-column: 1/1;
         grid-row: 2/2;
         border-right: 1px solid #2e2e2e;
+        padding: 0 40px;
 
         > .search-panel {
             display: flex;
@@ -83,16 +85,18 @@ $mainPurpleColor: #8a0983;
                     color: #eeeeee;
                     font-size: 1.5em;
                     font-weight: 700;
+                    width: 100px;
                 }
 
                 > input {
                     height: 32px;
                     border: none;
                     border-radius: 4px;
+                    width: 300px;
                 }
 
                 > .select {
-                    width: 200px;
+                    width: 300px;
                 }
             }
         }
@@ -111,6 +115,33 @@ $mainPurpleColor: #8a0983;
                 opacity: 1;
             }
         }
+        > .top-anime {
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
+
+            > h3 {
+                color: #eeeeee;
+            }
+            > a {
+                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background: $mainPurpleColor;
+                padding: 10px;
+                border: $mainPurpleColor;
+                border-radius: 6px;
+                > span {
+                    color: #eeeeee;
+                    font-weight: 600;
+                }
+                &:hover {
+                    background: darken($mainPurpleColor, 10%);
+                }
+            }
+        }
     }
 }
 
@@ -125,42 +156,70 @@ $mainPurpleColor: #8a0983;
     overflow-y: auto;
     height: 100%;
     align-content: flex-start;
+    padding: 20px;
+    > a {
+        text-decoration: none;
+        > .card {
+            height: 300px;
+            width: 200px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
 
-    > .card {
-        height: 300px;
-        width: 200px;
-        border-radius: 4px;
+            > .title {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: rgba(0, 0, 0, 0.7);
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                padding: 4px;
+                > span {
+                    &:first-child {
+                        color: #eeeeee;
+                        font-size: 1em;
+                        font-weight: 700;
+                        max-width: 90%;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                    &:nth-child(2) {
+                        height: 16px;
+                        width: 16px;
+                        border-radius: 50%;
 
-        > .title {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 4px;
-            > span {
-                &:first-child {
+                        &.airing {
+                            background: #098b1b;
+                            color: #098b1b;
+                            border: 1px solid rgba(0, 0, 0, 0.3);
+                        }
+                        &.ended {
+                            background: #8b2e09;
+                            color: #8b2e09;
+                            border: 1px solid rgba(0, 0, 0, 0.3);
+                        }
+                    }
+                }
+            }
+            > .info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 5px;
+
+                > span {
+                    border-radius: 4px;
+                    background: $mainPurpleColor;
+                    padding: 4px;
                     color: #eeeeee;
-                    font-size: 1em;
                     font-weight: 700;
-                    max-width: 90%;
-                    text-overflow: ellipsis;
+                    font-size: 1em;
                 }
-                &:nth-child(2) {
-                    height: 12px;
-                    width: 12px;
-                    border-radius: 50%;
+            }
 
-                    &.airing {
-                        background: #098b1b;
-                        color: #098b1b;
-                        border: 1px solid rgba(0, 0, 0, 0.3);
-                    }
-                    &.ended {
-                        background: #8b2e09;
-                        color: #8b2e09;
-                        border: 1px solid rgba(0, 0, 0, 0.3);
-                    }
-                }
+            &:hover {
+                transform: scale(1.1);
+                z-index: 99;
             }
         }
     }

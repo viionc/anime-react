@@ -1,28 +1,26 @@
 import React from "react";
 
 function AnimeCard({result}) {
-    const id = result.mal_id;
-    const url = result.url;
+    const {url, airing, score, episodes} = result;
     const image = result.image_url;
     const name = result.title;
-    const airing = result.airing;
-    const score = result.score;
     const desc = result.synopsis;
-    const episodes = result.episodes;
 
     return (
-        <div className="card" style={{background: `url(${image})`}}>
-            <div className="title">
-                <span>{name}</span>
-                <span className={airing ? "airing" : "ended"} title={airing ? "Airing" : "Ended"}>
-                    .
-                </span>
+        <a target="_blank" href={url}>
+            <div className="card" style={{background: `url(${image})`}} title={desc}>
+                <div className="title">
+                    <span title={name}>{name}</span>
+                    <span className={airing ? "airing" : "ended"} title={airing ? "Airing" : "Ended"}>
+                        .
+                    </span>
+                </div>
+                <div className="info">
+                    <span className="episodes">Ep.: {episodes}</span>
+                    <span className="score">S: {score}</span>
+                </div>
             </div>
-            <div className="info">
-                <span>{episodes}</span>
-                <span>{score}</span>
-            </div>
-        </div>
+        </a>
     );
 }
 
