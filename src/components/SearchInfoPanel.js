@@ -26,14 +26,14 @@ function SearchInfoPanel({setSearchFilters}) {
 
     useEffect(() => {
         let filter = "";
-        if (nameFilter != "") filter += `q=${nameFilter}`;
+        if (nameFilter !== "") filter += `q=${nameFilter}`;
         if (genresFilter.length) {
             const IDs = genresFilter.map(e => genres[e]);
-            if (filter != "") filter += "&";
+            if (filter !== "") filter += "&";
             filter += `genre=${IDs.join(",")}`;
         }
-        if (scoreFilter != "") {
-            if (filter != "") filter += "&";
+        if (scoreFilter !== "") {
+            if (filter !== "") filter += "&";
             filter += `score=${scoreFilter}&order_by=score&sort=descending`;
         }
         setSearchFilters(filter);

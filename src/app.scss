@@ -35,7 +35,10 @@ $backgroundColor: #2e2e2e;
         grid-row: 2/2;
         border-right: 1px solid #2e2e2e;
         padding: 0 40px;
-
+        gap: 0.5em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
         > .search-panel {
             display: flex;
             flex-direction: row;
@@ -101,7 +104,6 @@ $backgroundColor: #2e2e2e;
             }
         }
         > .search-button {
-            margin-top: 20px;
             padding: 0.3em 0.5em;
             color: white;
             background-color: $mainPurpleColor;
@@ -110,13 +112,20 @@ $backgroundColor: #2e2e2e;
             border-radius: 4px;
             cursor: pointer;
             opacity: 0.8;
+            width: 30%;
 
             &:hover {
                 opacity: 1;
             }
         }
+        > .warning {
+            background: #921515;
+            color: #eeeeee;
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 8px;
+        }
         > .top-anime {
-            margin-top: 70px;
             display: flex;
             flex-direction: column;
             gap: 0.25em;

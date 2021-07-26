@@ -7,7 +7,7 @@ function AnimeCard({result}) {
     const desc = result.synopsis;
 
     return (
-        <a target="_blank" href={url}>
+        <a target="_blank" href={url} rel="noreferrer">
             <div className="card" style={{background: `url(${image})`}} title={desc}>
                 <div className="title">
                     <span title={name}>{name}</span>

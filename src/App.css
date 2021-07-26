@@ -30,6 +30,10 @@
   grid-row: 2/2;
   border-right: 1px solid #2e2e2e;
   padding: 0 40px;
+  gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 .App > .left-panel > .search-panel {
   display: flex;
@@ -90,7 +94,6 @@
   width: 300px;
 }
 .App > .left-panel > .search-button {
-  margin-top: 20px;
   padding: 0.3em 0.5em;
   color: white;
   background-color: #92098b;
@@ -99,12 +102,19 @@
   border-radius: 4px;
   cursor: pointer;
   opacity: 0.8;
+  width: 30%;
 }
 .App > .left-panel > .search-button:hover {
   opacity: 1;
 }
+.App > .left-panel > .warning {
+  background: #921515;
+  color: #eeeeee;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+}
 .App > .left-panel > .top-anime {
-  margin-top: 70px;
   display: flex;
   flex-direction: column;
   gap: 0.25em;
