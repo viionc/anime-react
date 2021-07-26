@@ -7,7 +7,7 @@ function TopAnime({topAnime}) {
             {topAnime.map(anime => {
                 const {title, score, url} = anime;
                 return (
-                    <a target="_blank" href={url} className="wrapper">
+                    <a target="_blank" href={url} className="wrapper" key={anime.mal_id} rel="noreferrer">
                         <span>{title}</span>
                         <span>{score}</span>
                     </a>
