@@ -1,4 +1,4 @@
-$mainPurpleColor: #92098b;
+$mainColor: #2791cf;
 $backgroundColor: #2e2e2e;
 
 .App {
@@ -25,7 +25,7 @@ $backgroundColor: #2e2e2e;
         background-color: darken($backgroundColor, 5%);
 
         > .secondary {
-            color: $mainPurpleColor;
+            color: $mainColor;
             padding: 0 2px;
         }
     }
@@ -54,8 +54,8 @@ $backgroundColor: #2e2e2e;
             > .change-button {
                 padding: 0.3em 0.5em;
                 color: white;
-                background-color: $mainPurpleColor;
-                border: 1px solid darken($mainPurpleColor, 10%);
+                background-color: $mainColor;
+                border: 1px solid darken($mainColor, 10%);
                 font-size: 1.5em;
                 border-radius: 4px;
                 cursor: pointer;
@@ -106,8 +106,8 @@ $backgroundColor: #2e2e2e;
         > .search-button {
             padding: 0.3em 0.5em;
             color: white;
-            background-color: $mainPurpleColor;
-            border: 1px solid darken($mainPurpleColor, 10%);
+            background-color: $mainColor;
+            border: 1px solid darken($mainColor, 10%);
             font-size: 1.5em;
             border-radius: 4px;
             cursor: pointer;
@@ -138,16 +138,16 @@ $backgroundColor: #2e2e2e;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                background: $mainPurpleColor;
+                background: $mainColor;
                 padding: 10px;
-                border: $mainPurpleColor;
+                border: $mainColor;
                 border-radius: 6px;
                 > span {
                     color: #eeeeee;
                     font-weight: 600;
                 }
                 &:hover {
-                    background: darken($mainPurpleColor, 10%);
+                    background: darken($mainColor, 10%);
                 }
             }
         }
@@ -224,7 +224,7 @@ $backgroundColor: #2e2e2e;
 
                 > span {
                     border-radius: 4px;
-                    background: $mainPurpleColor;
+                    background: $mainColor;
                     padding: 4px;
                     color: #eeeeee;
                     font-weight: 700;

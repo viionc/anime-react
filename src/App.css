@@ -22,7 +22,7 @@
   background-color: #212121;
 }
 .App > .nav > .secondary {
-  color: #92098b;
+  color: #2791cf;
   padding: 0 2px;
 }
 .App > .left-panel {
@@ -50,8 +50,8 @@
 .App > .left-panel > .search-panel > .change-button {
   padding: 0.3em 0.5em;
   color: white;
-  background-color: #92098b;
-  border: 1px solid #62065d;
+  background-color: #2791cf;
+  border: 1px solid #1f73a4;
   font-size: 1.5em;
   border-radius: 4px;
   cursor: pointer;
@@ -96,8 +96,8 @@
 .App > .left-panel > .search-button {
   padding: 0.3em 0.5em;
   color: white;
-  background-color: #92098b;
-  border: 1px solid #62065d;
+  background-color: #2791cf;
+  border: 1px solid #1f73a4;
   font-size: 1.5em;
   border-radius: 4px;
   cursor: pointer;
@@ -127,9 +127,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #92098b;
+  background: #2791cf;
   padding: 10px;
-  border: #92098b;
+  border: #2791cf;
   border-radius: 6px;
 }
 .App > .left-panel > .top-anime > a > span {
@@ -137,7 +137,7 @@
   font-weight: 600;
 }
 .App > .left-panel > .top-anime > a:hover {
-  background: #62065d;
+  background: #1f73a4;
 }
 .App > h3 {
   color: #eeeeee;
@@ -209,7 +209,7 @@
 }
 .card-container > a > .card > .info > span {
   border-radius: 4px;
-  background: #92098b;
+  background: #2791cf;
   padding: 4px;
   color: #eeeeee;
   font-weight: 700;
