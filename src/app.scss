@@ -152,6 +152,12 @@ $backgroundColor: #2e2e2e;
             }
         }
     }
+    > h3 {
+        color: #eeeeee;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .card-container {
