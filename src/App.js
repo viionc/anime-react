@@ -9,25 +9,29 @@ function App() {
     const [topAnime, setTopAnime] = useState([]);
     const [searchFilters, setSearchFilters] = useState("");
     const [requestTimer, setRequestTimer] = useState(0);
+    const [noResults, setNoResults] = useState(false);
 
     const url = `https://api.jikan.moe/v3/search/anime?`;
 
     const fetchData = () => {
         if (requestTimer > 0) return;
         fetch(url + searchFilters)
-            .then(res => res.json())
-            .then(data => {
-                setSearchResults(data.results);
+            .then(res => {
+                return res.json();
             })
-            .catch(err => {
-                throw new Error(err);
+            .then(data => {
+                if (data.results) {
+                    setSearchResults(data.results);
+                    setNoResults(false);
+                    return;
+                }
+                setNoResults(true);
             });
         setRequestTimer(5);
     };
 
     useEffect(() => {
         if (requestTimer > 0) {
-            console.log("test");
             const interval = setInterval(() => {
                 setRequestTimer(requestTimer => requestTimer - 1);
             }, 1000);
@@ -48,7 +52,7 @@ function App() {
         <div className="App">
             <Header></Header>
             <LeftPanel setSearchFilters={setSearchFilters} fetchData={fetchData} topAnime={topAnime} requestTimer={requestTimer}></LeftPanel>
-            <RightPanel searchResults={searchResults}></RightPanel>
+            <RightPanel searchResults={searchResults} noResults={noResults}></RightPanel>
         </div>
     );
 }

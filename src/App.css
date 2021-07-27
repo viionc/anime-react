@@ -139,6 +139,12 @@
 .App > .left-panel > .top-anime > a:hover {
   background: #62065d;
 }
+.App > h3 {
+  color: #eeeeee;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
 
 .card-container {
   grid-row: 2/2;
