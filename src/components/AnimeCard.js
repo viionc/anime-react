@@ -2,7 +2,7 @@ import React from "react";
 
 function AnimeCard({result}) {
     const {url, airing, score, episodes} = result;
-    const image = result.image_url;
+    const image = result.images.jpg.image_url;
     const name = result.title;
     const desc = result.synopsis;
 
@@ -11,7 +11,10 @@ function AnimeCard({result}) {
             <div className="card" style={{background: `url(${image})`}} title={desc}>
                 <div className="title">
                     <span title={name}>{name}</span>
-                    <span className={airing ? "airing" : "ended"} title={airing ? "Airing" : "Ended"}>
+                    <span
+                        className={airing ? "airing" : "ended"}
+                        title={airing ? "Airing" : "Ended"}
+                    >
                         .
                     </span>
                 </div>
